@@ -1,0 +1,26 @@
+{
+  "name": "sockets-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergokovalenko/sockets-playground.git"
+  },
+  "keywords": [
+    "sockets"
+  ],
+  "author": "sergokovalenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergokovalenko/sockets-playground/issues"
+  },
+  "homepage": "https://github.com/sergokovalenko/sockets-playground#readme"
+}
