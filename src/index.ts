@@ -15,10 +15,14 @@ app.listen(port, (err) => {
     return console.log(`server is listening on ${port}`)
 });
 
-io.on('connection', () => {
+io.on('connection', socket => {
     console.log('socket connection');
+
+    socket.on('disconnect', () => {
+        console.log('socket disconnected');
+    });
 });
 
-server.listen(socketPort, function(){
+server.listen(socketPort, () => {
     console.log('listening sokects on 3001');
 });
