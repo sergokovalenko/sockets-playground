@@ -1,4 +1,5 @@
 import * as express from 'express'
+import * as path from 'path';
 
 class App {
     public express;
@@ -6,6 +7,7 @@ class App {
     constructor() {
         this.express = express();
         this.mountRoutes();
+        this.shareStaticResources();
     }
 
     private mountRoutes(): void {
@@ -16,6 +18,10 @@ class App {
         });
 
         this.express.use('/', router);
+    }
+
+    private shareStaticResources(): void {
+        this.express.use('/frontend', express.static(path.join(__dirname, 'frontend')));
     }
 }
 
