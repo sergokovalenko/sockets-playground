@@ -21,6 +21,14 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         console.log('socket disconnected');
     });
+
+    socket.on('send', msg => {
+        io.emit('send', msg);
+    });
+
+    socket.on('type', msg => {
+        io.emit('setType', msg);
+    });
 });
 
 server.listen(socketPort, () => {
