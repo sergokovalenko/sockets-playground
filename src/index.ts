@@ -1,18 +1,17 @@
-import app from './App'
 import * as http from 'http';
 import * as socketServer from 'socket.io';
+import { defaultServerPort, ipAddress, socketPort } from './../constants';
+import app from './App'
 
 const server = http.createServer(app);
 const io = socketServer(server);
-const port = 3000;
-const socketPort = 3001;
 
-app.listen(port, (err) => {
+app.listen(defaultServerPort, ipAddress, err => {
     if (err) {
         return console.log(err)
     }
 
-    return console.log(`server is listening on ${port}`)
+    return console.log(`server is listening on ${ipAddress}:${defaultServerPort}`)
 });
 
 io.on('connection', socket => {
@@ -31,6 +30,6 @@ io.on('connection', socket => {
     });
 });
 
-server.listen(socketPort, () => {
-    console.log('listening sokects on 3001');
+server.listen(socketPort, ipAddress, () => {
+    console.log(`sokects are listening on ${ipAddress}:${socketPort}`);
 });

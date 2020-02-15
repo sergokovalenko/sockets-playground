@@ -1,12 +1,13 @@
+import { ipAddress, socketPort } from './../constants';
 declare var io: Function;
 
 window.onload = () => {
-    const socket = io('http://localhost:3001');
+    const socket = io(`${ipAddress}:${socketPort}`);
     const element = document.getElementById('form');
     const typer = document.getElementById('typer');
     const input = document.getElementsByTagName("input")[0];
     const messagesBlock = document.getElementById('messages');
-    
+
     element.addEventListener('submit', e => {
         e.preventDefault();
         socket.emit('send', input.value);
