@@ -20,6 +20,12 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+      },
       { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
   }
