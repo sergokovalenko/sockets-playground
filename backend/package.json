@@ -11,8 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/src/index.js",
-    "a": "onchange -i -v -- tsc"
+    "start": "tsc && node dist/src/index.js"
   },
   "repository": {
     "type": "git",

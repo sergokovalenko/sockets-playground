@@ -1,7 +1,11 @@
 import * as http from 'http';
 import * as socketServer from 'socket.io';
-import { defaultServerPort, ipAddress, socketPort } from './../constants';
+
 import app from './App'
+
+const ipAddress = '192.168.0.23';
+const defaultServerPort = 3000;
+const socketPort = 3001;
 
 const server = http.createServer(app);
 const io = socketServer(server);

@@ -1,28 +1,22 @@
-import * as express from 'express'
-import * as path from 'path';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const path = require("path");
 class App {
-    public express;
-
     constructor() {
         this.express = express();
         this.mountRoutes();
         this.shareStaticResources();
     }
-
-    private mountRoutes(): void {
+    mountRoutes() {
         const router = express.Router();
-
         router.get('/', (req, res) => {
-            res.sendFile(__dirname + '/index.html');
+            res.sendFile(__dirname + '/../index.html');
         });
-
         this.express.use('/', router);
     }
-
-    private shareStaticResources(): void {
+    shareStaticResources() {
         this.express.use('/frontend', express.static(path.join(__dirname, 'frontend')));
     }
 }
-
-export default new App().express;
+exports.default = new App().express;
