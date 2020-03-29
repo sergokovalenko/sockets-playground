@@ -11,18 +11,18 @@ export default class Player extends Entity {
     }
 
     moveUp(): void {
-        this.y - this.speed;
+        this.y -= this.speed;
     }
 
     moveDown(): void {
-        this.y + this.speed;
+        this.y += this.speed;
     }
 
     moveLeft(): void {
-        this.x - this.speed;
+        this.x -= this.speed;
     }
 
     moveRight(): void {
-        this.x + this.speed;
+        this.x += this.speed;
     }
 }

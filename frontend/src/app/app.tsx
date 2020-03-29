@@ -19,13 +19,23 @@ window.onload = () => {
     requestAnimationFrame(rafCb);
   };
 
-  // TODO: for tests, remove it
-  window['player'] = player;
+  window.addEventListener('keypress', (event) => {
+    if (event.key === 'w') {
+      player.moveUp();
+    }
 
-  context.fillStyle = '#000000';
-  context.fillRect(0, 0, 1000, 1000);
+    if (event.key === 's') {
+      player.moveDown();
+    }
+
+    if (event.key === 'd') {
+      player.moveRight();
+    }
+
+    if (event.key === 'a') {
+      player.moveLeft();
+    }
+  });
 
   requestAnimationFrame(rafCb);
-  context.fillStyle = '#ff0000';
-  context.fillRect(player.x, player.y, player.width, player.height);
 };
