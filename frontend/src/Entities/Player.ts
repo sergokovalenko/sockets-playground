@@ -4,8 +4,8 @@ export default class Player extends Entity {
     lives: number;
     speed: number;
 
-    constructor(x: number, y: number, width: number, height: number) {
-        super(x, y, width, height);
+    constructor(x: number, y: number, width: number, height: number, color: string) {
+        super(x, y, width, height, color);
         this.lives = 1;
         this.speed = 1;
     }
